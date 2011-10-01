@@ -15,6 +15,12 @@ function onBodyLoad() {
 
 function onDeviceReady() {
   console.log('onDeviceReady');
+
+  // Register other handlers.
+  $('.btn').click(buttonClicked);
+}
+
+function buttonClicked() {
   navigator.notification.alert('loading');
   var src = 'http://dl.dropbox.com/u/740378/goodlook.wav';
   media = new Media(src, mediaSuccess, mediaError);
@@ -28,4 +34,3 @@ function mediaSuccess() {
 function mediaError() {
   navigator.notification.alert('error');
 }
-

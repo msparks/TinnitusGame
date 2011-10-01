@@ -1610,7 +1610,7 @@
 			</array>
 		</dict>
 		<string>IDEWorkspaceTabController_36332327-C1D9-41F6-83D8-43CF51EF0CEE</string>
-		<string>{{19, 44}, {1400, 952}}</string>
+		<string>{{114, 54}, {1400, 952}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -2683,7 +2683,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>24</integer>
+					<integer>129</integer>
 				</dict>
 			</array>
 		</dict>
@@ -3616,7 +3616,7 @@
 			</dict>
 		</dict>
 		<string>file://localhost/Users/ms/dev/TinnitusGame/TinnitusGame.xcodeproj/</string>
-		<real>339171534.35976899</real>
+		<real>339173910.40864003</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -3900,7 +3900,7 @@
 				</dict>
 			</array>
 		</dict>
-		<string>{{0, 0}, {1140, 876}}</string>
+		<string>{{0, 0}, {1140, 554}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -4949,7 +4949,7 @@
 				<integer>390</integer>
 			</dict>
 		</dict>
-		<real>339171534.359029</real>
+		<real>339173910.40771401</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -5418,7 +5418,7 @@
 		<string>IDEActivityReportStringSegmentStringValue</string>
 		<real>2</real>
 		<string> </string>
-		<string>Clean</string>
+		<string>Build</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -5597,7 +5597,7 @@
 				<integer>448</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>339149287.32046002</real>
+			<real>339173884.83356303</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -5608,7 +5608,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 1:08 AM</string>
+		<string>Today at 7:58 AM</string>
 		<integer>234</integer>
 		<dict>
 			<key>$class</key>
