@@ -16,6 +16,7 @@ function Puzzle() {
   this._rows = 11;
   this._columns = 11;
   this._words = [];
+  this._active_cell = undefined;
 }
 
 Puzzle.prototype.init = function() {
@@ -126,13 +127,12 @@ Puzzle.prototype.cell = function(x, y) {
   return this._matrix[parseInt(y)][parseInt(x)];
 };
 
-Puzzle.prototype.clearAllHighlighted = function() {
-  $('td.cell').removeClass('selectedword');
-  $('td.cell').removeClass('selectedcell');
-};
-
 Puzzle.prototype.highlightCellAndWord = function(cell) {
   var word = cell.word;
+  this._active_cell = cell;
+
+  $('td.cell').removeClass('selectedword');
+  $('td.cell').removeClass('selectedcell');
 
   for (var i = 0; i < word.word.length; ++i) {
     var letter = word.word[i];
@@ -156,4 +156,8 @@ Puzzle.prototype.highlightCellAndWord = function(cell) {
       td.addClass('selectedcell');
     }
   }
+};
+
+Puzzle.prototype.activeCell = function() {
+  return this._active_cell;
 };

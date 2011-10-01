@@ -55,7 +55,6 @@ function cellClicked() {
   var y = cellTd.attr('y');
   var cell = puzzle.cell(x, y);
 
-  puzzle.clearAllHighlighted();
   puzzle.highlightCellAndWord(cell);
 }
 
