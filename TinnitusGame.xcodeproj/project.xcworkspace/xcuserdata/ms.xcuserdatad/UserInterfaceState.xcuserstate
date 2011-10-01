@@ -1610,7 +1610,7 @@
 			</array>
 		</dict>
 		<string>IDEWorkspaceTabController_36332327-C1D9-41F6-83D8-43CF51EF0CEE</string>
-		<string>{{44, 104}, {1400, 952}}</string>
+		<string>{{19, 44}, {1400, 952}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -3616,7 +3616,7 @@
 			</dict>
 		</dict>
 		<string>file://localhost/Users/ms/dev/TinnitusGame/TinnitusGame.xcodeproj/</string>
-		<real>339149292.08670801</real>
+		<real>339171534.35976899</real>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -4949,7 +4949,7 @@
 				<integer>390</integer>
 			</dict>
 		</dict>
-		<real>339149292.08599198</real>
+		<real>339171534.359029</real>
 		<dict>
 			<key>$class</key>
 			<dict>
