@@ -149,10 +149,11 @@ Puzzle.prototype.highlightCellAndWord = function(cell) {
 
     var cls = 'td.cell[x="' + x + '"][y="' + y + '"]';
     var td = $(cls);
-
-    console.log('class: ' + cls);
-
-    // Find cell at this (x, y) and highlight.
     td.addClass('selectedword');
+
+    if (x == cell.x && y == cell.y) {
+      console.log(x);
+      td.addClass('selectedcell');
+    }
   }
 };

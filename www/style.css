@@ -56,14 +56,14 @@ td.cell {
   text-transform: uppercase;
 }
 
-td.black {
+td.cell.black {
   background-color: #222;
-}
-
-.selectedcell {
-  background-color: #7FC2F6;
 }
 
 td.cell.selectedword {
   background-color: #9FD0F6;
+}
+
+td.cell.selectedcell {
+  background-color: #7FC2F6;
 }
