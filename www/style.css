@@ -1,3 +1,33 @@
 body {
   background-color: #ccc;
 }
+
+.kbd {
+
+}
+
+.kbd .row {
+  text-align: center;
+}
+
+.kbd-btn {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  font-size: 21px;
+  line-height: 33px;
+  margin: 0 1px 3px 0;
+  text-align: center;
+  width: 24px;
+}
+
+.kbd-btn.bs {
+  background: none;
+  margin-left: 5px;
+  position: absolute;
+}
+
+.kbd-btn.bs img {
+  height: 32px;
+}
