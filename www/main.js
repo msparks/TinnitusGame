@@ -18,20 +18,13 @@ function onBodyLoad() {
 
 function onDeviceReady() {
   // Register other handlers.
-  $('.btn').click(buttonClicked);
+  $('#btn').click(playButtonClicked);
   $('.kbd-btn').click(keyboardButtonClicked);
 
   puzzle = new Puzzle();
   puzzle.init();
   puzzle.draw('.crossword');
   $('.cell').click(cellClicked);
-}
-
-function buttonClicked() {
-  navigator.notification.alert('loading');
-  var src = 'http://dl.dropbox.com/u/740378/goodlook.wav';
-  media = new Media(src, mediaSuccess, mediaError);
-  media.play();
 }
 
 function keyboardButtonClicked() {
@@ -95,10 +88,14 @@ function showPlayClipButton(word) {
   $('#btn').html('Play clip');
 }
 
+function playButtonClicked() {
+  var src = 'http://dl.dropbox.com/u/740378/goodlook.wav';
+  media = new Media(src, mediaSuccess, mediaError);
+  media.play();
+}
+
 function mediaSuccess() {
-  navigator.notification.alert('success');
 }
 
 function mediaError() {
-  navigator.notification.alert('error');
 }
