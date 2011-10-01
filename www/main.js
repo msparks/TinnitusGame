@@ -11,6 +11,8 @@ var media;
 
 function onBodyLoad() {
   document.addEventListener("deviceready", onDeviceReady, false);
+
+  onDeviceReady();
 }
 
 function onDeviceReady() {
@@ -22,6 +24,7 @@ function onDeviceReady() {
 
   var puzzle = new Puzzle();
   puzzle.init();
+  puzzle.draw('.crossword');
 }
 
 function buttonClicked() {

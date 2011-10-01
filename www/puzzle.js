@@ -17,33 +17,59 @@ function Puzzle() {
 }
 
 Puzzle.prototype.init = function() {
-  this._draw(target);
+  function addWord(matrix, word) {
+    console.log(matrix);
 
-  // Add sample words.
-  this._words.push(Word('chamber', 0, 0, true));
-
-  // Create puzzle matrix. The puzzle is an array of rows, and each row is an
-  // array of Cells.
-  this._rows = new Array();
-  for (var i = 0; i < this._rows; ++i)
-    rows[i] = new Array();  // array of Cells
-
-  function addWord(word) {
     for (var i = 0; i < word.word.length; ++i) {
       var letter = word.word[i];
+      console.log('letter: ' + letter);
 
       if (word.across)
-        rows[word.y][x + i] = Cell(word, i);
+        matrix[word.y][word.x + i] = new Cell(word, i);
       else
-        rows[word.y + i][x] = Cell(word, i);
+        matrix[word.y + i][word.x] = new Cell(word, i);
     }
   }
 
+  // Add sample words.
+  this._words.push(new Word('chamber', 0, 0, true));
+
+  // Create puzzle matrix. The puzzle is an array of rows, and each row is an
+  // array of Cells.
+  this._matrix = new Array();
+  for (var i = 0; i < this._rows; ++i)
+    this._matrix[i] = new Array();  // array of Cells
+
   // Add words to puzzle matrix.
-  for (var i = 0; i < this._words.length; ++i)
-    var word = addWord(this._words[i]);
+  for (var i = 0; i < this._words.length; ++i) {
+    var word = this._words[i];
+    console.log(word);
+    addWord(this._matrix, word);
+  }
 };
 
 Puzzle.prototype.draw = function(target) {
+  var crossword = $(target);
 
+  function createCellDiv(cell) {
+    var div = $('<div></div');
+    var letter = cell.word.word[cell.position];
+    div.html(letter);
+    div.addClass('cell');
+    return div;
+  }
+
+  function createRowDiv(row) {
+    var div = $('<div></div>');
+    for (var i = 0; i < row.length; ++i) {
+      var cell = createCellDiv(row[i]);
+      div.append(cell);
+    }
+    return div;
+  }
+
+  for (var i = 0; i < this._rows; ++i) {
+    var row = createRowDiv(this._matrix[i]);
+    crossword.append(row);
+  }
 };
