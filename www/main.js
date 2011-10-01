@@ -83,7 +83,16 @@ function cellClicked() {
   var y = cellTd.attr('y');
   var cell = puzzle.cell(x, y);
 
+  // Highlight cells.
   puzzle.highlightCellAndWord(cell);
+
+  // Show play button.
+  showPlayClipButton(cell.word);
+}
+
+function showPlayClipButton(word) {
+  $('#btn').css('visibility', 'visible');
+  $('#btn').html('Play clip');
 }
 
 function mediaSuccess() {

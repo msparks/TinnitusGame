@@ -39,6 +39,15 @@ body {
   padding: 0;
 }
 
+#btn {
+  height: 25px;
+  margin: 0 auto;
+  margin-top: 4px;
+  width: 250px;
+  display: block;
+  visibility: hidden;
+}
+
 tr.row {
   margin: 0;
   padding: 0;
