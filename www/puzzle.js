@@ -33,12 +33,18 @@ Puzzle.prototype.init = function() {
 
   // Add sample words.
   this._words.push(new Word('chamber', 0, 0, true));
+  this._words.push(new Word('kill', 4, 4, true));
+  this._words.push(new Word('out', 2, 4, false));
 
   // Create puzzle matrix. The puzzle is an array of rows, and each row is an
   // array of Cells.
   this._matrix = new Array();
-  for (var i = 0; i < this._rows; ++i)
+  for (var i = 0; i < this._rows; ++i) {
     this._matrix[i] = new Array();  // array of Cells
+    for (var j = 0; j < this._columns; ++j) {
+      this._matrix[i][j] = undefined;
+    }
+  }
 
   // Add words to puzzle matrix.
   for (var i = 0; i < this._words.length; ++i) {
@@ -53,9 +59,13 @@ Puzzle.prototype.draw = function(target) {
 
   function createCellDiv(cell) {
     var div = $('<div></div');
-    var letter = cell.word.word[cell.position];
-    div.html(letter);
-    div.addClass('cell');
+    if (cell === undefined) {
+      div.addClass('black');
+    } else {
+      var letter = cell.word.word[cell.position];
+      div.html(letter);
+      div.addClass('cell');
+    }
     return div;
   }
 
