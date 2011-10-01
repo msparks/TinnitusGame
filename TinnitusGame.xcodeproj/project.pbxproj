@@ -33,6 +33,7 @@
 		4ECB6CB71436F70600222246 /* Capture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4ECB6CB61436F70600222246 /* Capture.bundle */; };
 		4ECB6CB91436F70600222246 /* PhoneGap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ECB6CB81436F70600222246 /* PhoneGap.plist */; };
 		4ECB6CBD1436F70600222246 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECB6CBC1436F70600222246 /* AppDelegate.m */; };
+		E2E1E5E0143777C000AE9D4B /* www in Resources */ = {isa = PBXBuildFile; fileRef = E2E1E5DF143777C000AE9D4B /* www */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		4ECB6CBB1436F70600222246 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		4ECB6CBC1436F70600222246 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		4ECB6CBF1436F70600222246 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
+		E2E1E5DF143777C000AE9D4B /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		4ECB6C6A1436F70600222246 = {
 			isa = PBXGroup;
 			children = (
+				E2E1E5DF143777C000AE9D4B /* www */,
 				4ECB6C961436F70600222246 /* TinnitusGame */,
 				4ECB6C7B1436F70600222246 /* Frameworks */,
 				4ECB6C791436F70600222246 /* Products */,
@@ -287,6 +290,7 @@
 				4ECB6CB51436F70600222246 /* Default@2x.png in Resources */,
 				4ECB6CB71436F70600222246 /* Capture.bundle in Resources */,
 				4ECB6CB91436F70600222246 /* PhoneGap.plist in Resources */,
+				E2E1E5E0143777C000AE9D4B /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +475,7 @@
 				4ECB6CC41436F70600222246 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
