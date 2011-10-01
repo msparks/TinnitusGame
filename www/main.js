@@ -91,11 +91,15 @@ function showPlayClipButton(word) {
 function playButtonClicked() {
   var src = 'http://dl.dropbox.com/u/740378/goodlook.wav';
   media = new Media(src, mediaSuccess, mediaError);
+
+  $('#btn').html('Playing...');
   media.play();
 }
 
 function mediaSuccess() {
+  $('#btn').html('Play clip');
 }
 
 function mediaError() {
+  $('#btn').html('Play clip');
 }
