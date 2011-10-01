@@ -36,10 +36,21 @@ function buttonClicked() {
 
 function keyboardButtonClicked() {
   var btn = $(this);
-  var letter = btn.html();
+  var letter = btn.html().toLowerCase();
+  var active_cell = puzzle.activeCell();
+  if (!active_cell)
+    return;
+
+  var active_correct_letter = active_cell.word.word[active_cell.position];
+  active_correct_letter = active_correct_letter.toLowerCase();
 
   if (letter.length == 1) {
     // Letter.
+    if (letter == active_correct_letter) {
+      alert('correct');
+    } else {
+      alert('incorrect');
+    }
   } else {
     // Backspace.
   }
