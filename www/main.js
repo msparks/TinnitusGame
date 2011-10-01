@@ -19,6 +19,9 @@ function onDeviceReady() {
   // Register other handlers.
   $('.btn').click(buttonClicked);
   $('.kbd-btn').click(keyboardButtonClicked);
+
+  var puzzle = new Puzzle();
+  puzzle.init();
 }
 
 function buttonClicked() {
