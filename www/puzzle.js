@@ -57,29 +57,29 @@ Puzzle.prototype.init = function() {
 Puzzle.prototype.draw = function(target) {
   var crossword = $(target);
 
-  function createCellDiv(cell) {
-    var div = $('<div></div');
+  function createCell(cell) {
+    var td = $('<td></td>');
     if (cell === undefined) {
-      div.addClass('black');
+      td.addClass('black');
     } else {
       var letter = cell.word.word[cell.position];
-      div.html(letter);
-      div.addClass('cell');
+      td.html(letter);
+      td.addClass('cell');
     }
-    return div;
+    return td;
   }
 
-  function createRowDiv(row) {
-    var div = $('<div></div>');
+  function createRow(row) {
+    var tr = $('<tr></tr>');
     for (var i = 0; i < row.length; ++i) {
-      var cell = createCellDiv(row[i]);
-      div.append(cell);
+      var cell = createCell(row[i]);
+      tr.append(cell);
     }
-    return div;
+    return tr;
   }
 
   for (var i = 0; i < this._rows; ++i) {
-    var row = createRowDiv(this._matrix[i]);
+    var row = createRow(this._matrix[i]);
     crossword.append(row);
   }
 };
