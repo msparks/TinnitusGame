@@ -7,9 +7,12 @@
   <meta charset="utf-8">
 
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="jquery.mobile-1.0rc1.min.css" rel="stylesheet" type="text/css" />
 
   <script type="text/javascript"
-          charset="utf-8" src="jquery.min.js"></script>
+          charset="utf-8" src="jquery-1.6.4.min.js"></script>
+  <script type="text/javascript"
+          charset="utf-8" src="jquery.mobile-1.0rc1.min.js"></script>
   <script type="text/javascript"
           charset="utf-8" src="phonegap-1.1.0.js"></script>
   <script type="text/javascript"
@@ -17,9 +20,19 @@
 </head>
 <body onload="onBodyLoad()">
 
-<h1>Tinnitus Game</h1>
+<div data-role="page">
+  <div data-role="header">
+    <h1>Page Title</h1>
+  </div><!-- /header -->
 
-<a href="#" class="btn">Touch me</a>
+  <div data-role="content">
+    <p><a href="#" data-role="button" data-inline="true">Touch me</a></p>
+  </div><!-- /content -->
+
+  <div data-role="footer">
+    <h4>Page Footer</h4>
+  </div><!-- /footer -->
+</div>
 
 </body>
 </html>
