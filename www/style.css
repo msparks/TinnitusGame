@@ -3,7 +3,8 @@ body {
 }
 
 .kbd {
-
+  position: absolute;
+  top: 350px;
 }
 
 .kbd .row {
@@ -30,4 +31,39 @@ body {
 
 .kbd-btn.bs img {
   height: 32px;
+}
+
+.crossword {
+  margin: 0 auto;
+  margin-top: -15px;
+  padding: 0;
+}
+
+tr.row {
+  margin: 0;
+  padding: 0;
+}
+
+td.cell {
+  border: 1px solid black;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+td.black {
+  background-color: #222;
+}
+
+.selectedcell {
+  background-color: #7FC2F6;
+}
+
+.selectedword {
+  background-color: #9FD0F6;
 }

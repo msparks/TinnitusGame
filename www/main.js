@@ -8,23 +8,23 @@
 */
 
 var media;
+var puzzle;
 
 function onBodyLoad() {
-  document.addEventListener("deviceready", onDeviceReady, false);
+  document.addEventListener('deviceready', onDeviceReady, false);
 
-  onDeviceReady();
+  //  onDeviceReady();
 }
 
 function onDeviceReady() {
-  console.log('onDeviceReady');
-
   // Register other handlers.
   $('.btn').click(buttonClicked);
   $('.kbd-btn').click(keyboardButtonClicked);
 
-  var puzzle = new Puzzle();
+  puzzle = new Puzzle();
   puzzle.init();
   puzzle.draw('.crossword');
+  $('.cell').click(cellClicked);
 }
 
 function buttonClicked() {
@@ -43,6 +43,12 @@ function keyboardButtonClicked() {
   } else {
     // Backspace.
   }
+}
+
+function cellClicked() {
+  var cellTd = $(this);
+  var cell = puzzle.cell(cellTd.attr('x'), cellTd.attr('y'));
+  console.log(cell);
 }
 
 function mediaSuccess() {
