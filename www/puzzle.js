@@ -86,7 +86,7 @@ Puzzle.prototype.init = function() {
 Puzzle.prototype.draw = function(target) {
   var crossword = $(target);
 
-  function createCell(cell) {
+  function createCell(cell, x, y) {
     var td = $('<td></td>');
     td.addClass('cell');
     if (cell === undefined) {
@@ -94,24 +94,24 @@ Puzzle.prototype.draw = function(target) {
     } else {
       var letter = cell.word.word[cell.position];
       td.html(letter);
-      td.attr('x', cell.word.x);
-      td.attr('y', cell.word.y);
+      td.attr('x', x);
+      td.attr('y', y);
     }
     return td;
   }
 
-  function createRow(row) {
+  function createRow(row, y) {
     var tr = $('<tr></tr>');
     tr.addClass('row');
     for (var i = 0; i < row.length; ++i) {
-      var cell = createCell(row[i]);
+      var cell = createCell(row[i], i, y);
       tr.append(cell);
     }
     return tr;
   }
 
   for (var i = 0; i < this._rows; ++i) {
-    var row = createRow(this._matrix[i]);
+    var row = createRow(this._matrix[i], i);
     crossword.append(row);
   }
 };

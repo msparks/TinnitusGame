@@ -47,8 +47,15 @@ function keyboardButtonClicked() {
 
 function cellClicked() {
   var cellTd = $(this);
+  // Ignore unused cells.
+  if (cellTd.hasClass('black'))
+    return;
+
+  alert(cellTd.attr('x'));
+  alert(cellTd.attr('y'));
+
   var cell = puzzle.cell(cellTd.attr('x'), cellTd.attr('y'));
-  console.log(cell);
+  alert(cell.word.word);
 }
 
 function mediaSuccess() {
