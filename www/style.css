@@ -67,3 +67,11 @@ td.cell.selectedword {
 td.cell.selectedcell {
   background-color: #7FC2F6;
 }
+
+td.cell.correct {
+  color: green;
+}
+
+td.cell.incorrect {
+  color: red;
+}

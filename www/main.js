@@ -13,7 +13,7 @@ var puzzle;
 function onBodyLoad() {
   document.addEventListener('deviceready', onDeviceReady, false);
 
-  onDeviceReady();
+  //onDeviceReady();
 }
 
 function onDeviceReady() {
@@ -47,13 +47,30 @@ function keyboardButtonClicked() {
   if (letter.length == 1) {
     // Letter.
     if (letter == active_correct_letter) {
-      alert('correct');
+      showCorrectLetter(active_cell, letter);
     } else {
-      alert('incorrect');
+      showIncorrectLetter(active_cell, letter);
     }
   } else {
     // Backspace.
   }
+}
+
+function showCorrectLetter(cell, letter) {
+  var cls = 'td.cell[x="' + cell.x + '"][y="' + cell.y + '"]';
+  console.log(cls);
+  var td = $(cls);
+  td.html(letter);
+  td.removeClass('incorrect');
+  td.addClass('correct');
+}
+
+function showIncorrectLetter(cell, letter) {
+  var cls = 'td.cell[x="' + cell.x + '"][y="' + cell.y + '"]';
+  var td = $(cls);
+  td.html(letter);
+  td.removeClass('correct');
+  td.addClass('incorrect');
 }
 
 function cellClicked() {
