@@ -13,7 +13,7 @@ var puzzle;
 function onBodyLoad() {
   document.addEventListener('deviceready', onDeviceReady, false);
 
-  //  onDeviceReady();
+  onDeviceReady();
 }
 
 function onDeviceReady() {
@@ -51,11 +51,12 @@ function cellClicked() {
   if (cellTd.hasClass('black'))
     return;
 
-  alert(cellTd.attr('x'));
-  alert(cellTd.attr('y'));
+  var x = cellTd.attr('x');
+  var y = cellTd.attr('y');
+  var cell = puzzle.cell(x, y);
 
-  var cell = puzzle.cell(cellTd.attr('x'), cellTd.attr('y'));
-  alert(cell.word.word);
+  puzzle.clearAllHighlighted();
+  puzzle.highlightCellAndWord(cell);
 }
 
 function mediaSuccess() {

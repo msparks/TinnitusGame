@@ -5,9 +5,11 @@ function Word(word, x, y, across) {
   this.across = across;  // true or false
 }
 
-function Cell(word, position) {
+function Cell(word, position, x, y) {
   this.word = word;
   this.position = position;
+  this.x = x;
+  this.y = y;
 }
 
 function Puzzle() {
@@ -18,16 +20,21 @@ function Puzzle() {
 
 Puzzle.prototype.init = function() {
   function addWord(matrix, word) {
-    console.log(matrix);
-
     for (var i = 0; i < word.word.length; ++i) {
       var letter = word.word[i];
-      console.log('letter: ' + letter);
 
-      if (word.across)
-        matrix[word.y][word.x + i] = new Cell(word, i);
-      else
-        matrix[word.y + i][word.x] = new Cell(word, i);
+      var x;
+      var y;
+      if (word.across) {
+        x = word.x + i;
+        y = word.y;
+      } else {
+        x = word.x;
+        y = word.y + i;
+      }
+
+      var cell = new Cell(word, i, x, y);
+      matrix[y][x] = cell;
     }
   }
 
@@ -78,7 +85,6 @@ Puzzle.prototype.init = function() {
   // Add words to puzzle matrix.
   for (var i = 0; i < this._words.length; ++i) {
     var word = this._words[i];
-    console.log(word);
     addWord(this._matrix, word);
   }
 };
@@ -86,7 +92,7 @@ Puzzle.prototype.init = function() {
 Puzzle.prototype.draw = function(target) {
   var crossword = $(target);
 
-  function createCell(cell, x, y) {
+  function createCell(cell) {
     var td = $('<td></td>');
     td.addClass('cell');
     if (cell === undefined) {
@@ -94,28 +100,59 @@ Puzzle.prototype.draw = function(target) {
     } else {
       var letter = cell.word.word[cell.position];
       td.html(letter);
-      td.attr('x', x);
-      td.attr('y', y);
+      td.attr('x', cell.x);
+      td.attr('y', cell.y);
     }
     return td;
   }
 
-  function createRow(row, y) {
+  function createRow(row) {
     var tr = $('<tr></tr>');
     tr.addClass('row');
     for (var i = 0; i < row.length; ++i) {
-      var cell = createCell(row[i], i, y);
+      var cell = createCell(row[i]);
       tr.append(cell);
     }
     return tr;
   }
 
   for (var i = 0; i < this._rows; ++i) {
-    var row = createRow(this._matrix[i], i);
+    var row = createRow(this._matrix[i]);
     crossword.append(row);
   }
 };
 
 Puzzle.prototype.cell = function(x, y) {
-  return this._rows[y][x];
-}
+  return this._matrix[parseInt(y)][parseInt(x)];
+};
+
+Puzzle.prototype.clearAllHighlighted = function() {
+  $('td.cell').removeClass('selectedword');
+  $('td.cell').removeClass('selectedcell');
+};
+
+Puzzle.prototype.highlightCellAndWord = function(cell) {
+  var word = cell.word;
+
+  for (var i = 0; i < word.word.length; ++i) {
+    var letter = word.word[i];
+
+    var x;
+    var y;
+    if (word.across) {
+      x = word.x + i;
+      y = word.y;
+    } else {
+      x = word.x;
+      y = word.y + i;
+    }
+
+    var cls = 'td.cell[x="' + x + '"][y="' + y + '"]';
+    var td = $(cls);
+
+    console.log('class: ' + cls);
+
+    // Find cell at this (x, y) and highlight.
+    td.addClass('selectedword');
+  }
+};

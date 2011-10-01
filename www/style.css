@@ -64,6 +64,6 @@ td.black {
   background-color: #7FC2F6;
 }
 
-.selectedword {
+td.cell.selectedword {
   background-color: #9FD0F6;
 }
