@@ -99,9 +99,9 @@ Puzzle.prototype.draw = function(target) {
       td.addClass('black');
     } else {
       var letter = cell.word.word[cell.position];
-      td.html(letter);
       td.attr('x', cell.x);
       td.attr('y', cell.y);
+      td.attr('letter', letter);
     }
     return td;
   }
