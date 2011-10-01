@@ -18,6 +18,7 @@ function onDeviceReady() {
 
   // Register other handlers.
   $('.btn').click(buttonClicked);
+  $('.kbd-btn').click(keyboardButtonClicked);
 }
 
 function buttonClicked() {
@@ -25,6 +26,17 @@ function buttonClicked() {
   var src = 'http://dl.dropbox.com/u/740378/goodlook.wav';
   media = new Media(src, mediaSuccess, mediaError);
   media.play();
+}
+
+function keyboardButtonClicked() {
+  var btn = $(this);
+  var letter = btn.html();
+
+  if (letter.length == 1) {
+    // Letter.
+  } else {
+    // Backspace.
+  }
 }
 
 function mediaSuccess() {
