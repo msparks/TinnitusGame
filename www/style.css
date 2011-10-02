@@ -1,3 +1,7 @@
+html {
+  background: url(images/neuron_background.png) no-repeat;
+}
+
 .kbd {
   position: absolute;
   top: 350px;

@@ -13,6 +13,7 @@ var puzzle;
 function onBodyLoad() {
   document.addEventListener('deviceready', onDeviceReady, false);
 
+  $('.ui-page').css('background', 'url(images/neuron_background.png)');
   //onDeviceReady();
 }
 
@@ -44,6 +45,7 @@ function keyboardButtonClicked() {
     } else {
       showIncorrectLetter(active_cell, letter);
     }
+    selectNextCell(active_cell);
   } else {
     // Backspace.
   }
@@ -81,6 +83,10 @@ function cellClicked() {
 
   // Show play button.
   showPlayClipButton(cell.word);
+}
+
+function selectNextCell() {
+
 }
 
 function showPlayClipButton(word) {
