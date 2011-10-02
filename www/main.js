@@ -89,7 +89,10 @@ function showPlayClipButton(word) {
 }
 
 function playButtonClicked() {
-  var src = 'http://dl.dropbox.com/u/740378/goodlook.wav';
+  var cell = puzzle.activeCell();
+  var word_str = cell.word.word;
+
+  var src = word_str + '.wav';
   media = new Media(src, mediaSuccess, mediaError);
 
   $('#btn').html('Playing...');
